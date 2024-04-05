@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: env-vars-app
-          image: "ghcr.io/adorsys-gis/crash-k8s-complex:main"
+          image: "ghcr.io/adorsys-gis/crash-k8s-complex:master"
           ports:
             - containerPort: 3000
           env:
