@@ -2,7 +2,7 @@ name: Build and Push Docker image
 
 on:
   push:
-    branches: [ main ]
+    branches: [ '**' ]
 
 env:
   REGISTRY: ghcr.io
@@ -46,6 +46,6 @@ jobs:
         with:
           context: ./3_complex_example
           file: ./3_complex_example/Dockerfile
-          push: "${{ github.ref == 'refs/heads/main' && 'true' || 'false' }}"
+          push: "${{ github.ref == 'refs/heads/master' && 'true' || 'false' }}"
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
