@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: env-vars-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: env-vars-app
+  template:
+    metadata:
+      labels:
+        app: env-vars-app
+    spec:
+      containers:
+        - name: env-vars-app
+          image: yourusername/env-vars-app:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: env-vars-secret
+                  key: SECRET_KEY
+            - name: CONFIG_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: env-vars-config
+                  key: CONFIG_KEY
+      imagePullSecrets:
+        - name: app-pull-secret
