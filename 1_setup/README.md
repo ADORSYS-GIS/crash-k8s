@@ -66,7 +66,7 @@
 
    Add these lines to your shell configuration file (e.g., `~/.bashrc` or `~/.zshrc`):
    ```shell
-   alias kubectl='multipass exec k3s -- kubectl'
+   alias kubectl='multipass exec k3s -- sudo kubectl'
    alias helm='multipass exec k3s -- helm'
    ```
 
