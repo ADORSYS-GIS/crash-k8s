@@ -22,6 +22,12 @@
    multipass info k3s
    ```
 
+   Check if the mount worked
+   ```
+   multipass exec k3s -- ls /etc/crs -la
+   ```
+   Remark the ```multipass exec``` takes you into the mounted subdirectory if one. 
+
    You can check the status of the VM with the following command:
 
    ```shell
