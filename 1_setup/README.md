@@ -12,9 +12,9 @@
    ```shell
    multipass launch --name k3s --cpus 2 --mem 8G --disk 40G
    ```
-   Mount the home into the vm:
+   Mount the project dir into the vm:
    ```shell
-   multipass mount $HOME k3s
+   multipass mount $(pwd) k3s:/etc/crs
    ```
    
    You can check your instance with the following command:
