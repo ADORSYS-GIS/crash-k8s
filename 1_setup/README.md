@@ -14,13 +14,19 @@
    ```
    Mount the home into the vm:
    ```shell
-   multipass mount $HOME k3s
+   multipass mount $(pwd) k3s:/etc/crs
    ```
    
    You can check your instance with the following command:
    ```shell
    multipass info k3s
    ```
+
+   Check if the mount worked
+   ```
+   multipass exec k3s -- ls /etc/crs -la
+   ```
+   Remark the ```multipass exec``` takes you into the mounted subdirectory if one. 
 
    You can check the status of the VM with the following command:
 
