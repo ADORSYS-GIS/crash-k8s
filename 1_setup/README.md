@@ -14,7 +14,7 @@
    ```
    Mount the home into the vm:
    ```shell
-   multipass mount $HOME k3s
+   multipass mount $(pwd) k3s:/etc/crs
    ```
    
    You can check your instance with the following command:
